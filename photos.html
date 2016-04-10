@@ -12,6 +12,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/ekko-lightbox.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
   </head>
@@ -71,12 +72,12 @@
         <div class="col-md-8">
           <h1 class="page-header">Photos</h1>
           <ul class="photos gallery-parent">
-            <li><img src="img/sample1.jpg" class="img-thumbnail"></li>
-            <li><img src="img/sample2.jpg" class="img-thumbnail"></li>
-            <li><img src="img/sample3.jpg" class="img-thumbnail"></li>
-            <li><img src="img/sample4.jpg" class="img-thumbnail"></li>
-            <li><img src="img/sample5.jpg" class="img-thumbnail"></li>
-            <li><img src="img/sample6.jpg" class="img-thumbnail"></li>
+            <li><a href="img/sample1.jpg" data-title="Image One" data-footer="This is image one." data-toggle="lightbox" data-gallery="mygallery" data-parent=".gallery-parent"><img src="img/sample1.jpg" class="img-thumbnail"></a></li>
+            <li><a href="img/sample2.jpg" data-title="Image Two" data-footer="This is image two." data-toggle="lightbox" data-gallery="mygallery" data-parent=".gallery-parent"><img src="img/sample2.jpg" class="img-thumbnail"></a></li>
+            <li><a href="img/sample3.jpg" data-title="Image Three" data-footer="This is image three." data-toggle="lightbox" data-gallery="mygallery" data-parent=".gallery-parent"><img src="img/sample3.jpg" class="img-thumbnail"></a></li>
+            <li><a href="img/sample4.jpg" data-title="Image Four" data-footer="This is image four." data-toggle="lightbox" data-gallery="mygallery" data-parent=".gallery-parent"><img src="img/sample4.jpg" class="img-thumbnail"></a></li>
+            <li><a href="img/sample5.jpg" data-title="Image Five" data-footer="This is image five." data-toggle="lightbox" data-gallery="mygallery" data-parent=".gallery-parent"><img src="img/sample5.jpg" class="img-thumbnail"></a></li>
+            <li><a href="img/sample6.jpg" data-title="Image Six" data-footer="This is image six." data-toggle="lightbox" data-gallery="mygallery" data-parent=".gallery-parent"><img src="img/sample6.jpg" class="img-thumbnail"></a></li>
           </ul>
         </div><!-- col-md-8 end -->
 
@@ -149,5 +150,12 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/ekko-lightbox.js"></script>
+    <script>
+      $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+      });
+    </script>
   </body>
 </html>
